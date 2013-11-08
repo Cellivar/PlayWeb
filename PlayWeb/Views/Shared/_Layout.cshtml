@@ -21,20 +21,28 @@
 			}, 2000);
 	</script>
 	<div id="css_footer_wrap">
-			<div id="css_footer_body">
-				@HeaderContent()
-				@RenderBody()
-			</div>
+		<div id="css_footer_body">
+			@HeaderContent()
+			@RenderBody()
+		</div>
 	</div>
-	<div id="css_footer_footer" class="diagonal_lines_pattern">
-
-	</div>
+	@FooterContent()
 </body>
 </html>
 
 @helper HeaderContent()
 {
-<div id="header">
-		DERP. DERP. DERP.
+<div id="header" class="diagonal_bar_pattern">
+	StaQ
+</div>
+}
+
+@helper FooterContent()
+{
+<div id="css_footer_footer" class="diagonal_lines_pattern">
+	<div id="footer_content">
+		<div>This is some fancypants footer content that is super cool and stuff.</div>
+		<div>Something break? <a href="mailto:chapman.cliff@gmail.com">Email Webmaster</a></div>
+	</div>
 </div>
 }
