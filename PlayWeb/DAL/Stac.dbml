@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Stac" Class="StacDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CLIFFDESKTOP\PLAYDB;Initial Catalog=Stac;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StacConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ColorEnum" Member="ColorEnums">
+    <Type Name="ColorEnum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ColorEnum_Task" Member="Tasks" ThisKey="ID" OtherKey="Color" Type="Task" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="User_Task" Member="Tasks" ThisKey="ID" OtherKey="UserID" Type="Task" />
+      <Association Name="Email_User" Member="Email" ThisKey="EmailID" OtherKey="ID" Type="Email" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Emails" Member="Emails">
+    <Type Name="Email">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Member="Email1" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Association Name="Email_User" Member="Users" ThisKey="ID" OtherKey="EmailID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PriorityEnum" Member="PriorityEnums">
+    <Type Name="PriorityEnum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PriorityEnum_Task" Member="Tasks" ThisKey="ID" OtherKey="Priority" Type="Task" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reminders" Member="Reminders">
+    <Type Name="Reminder">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ReminderTypeEnum_Reminder" Member="ReminderTypeEnum" ThisKey="Type" OtherKey="ID" Type="ReminderTypeEnum" IsForeignKey="true" />
+      <Association Name="Task_Reminder" Member="Task" ThisKey="TaskID" OtherKey="ID" Type="Task" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReminderTypeEnum" Member="ReminderTypeEnums">
+    <Type Name="ReminderTypeEnum">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ReminderTypeEnum_Reminder" Member="Reminders" ThisKey="ID" OtherKey="Type" Type="Reminder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tasks" Member="Tasks">
+    <Type Name="Task">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Deadline" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Task_Reminder" Member="Reminders" ThisKey="ID" OtherKey="TaskID" Type="Reminder" />
+      <Association Name="ColorEnum_Task" Member="ColorEnum" ThisKey="Color" OtherKey="ID" Type="ColorEnum" IsForeignKey="true" />
+      <Association Name="PriorityEnum_Task" Member="PriorityEnum" ThisKey="Priority" OtherKey="ID" Type="PriorityEnum" IsForeignKey="true" />
+      <Association Name="User_Task" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Users_Create" Method="Users_Create">
+    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Users_GetFromID" Method="Users_GetFromID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" Direction="InOut" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Users_GetFromEmail" Method="Users_GetFromEmail">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" Direction="InOut" />
+    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

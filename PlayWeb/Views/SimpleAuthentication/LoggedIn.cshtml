@@ -1,0 +1,13 @@
+﻿
+@model PlayWeb.Models.Login.AuthenticateCallbackViewModel
+
+@{
+    ViewBag.Title = "LoggedIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LoggedIn</h2>
+Email: @Model.AuthenticatedClient.UserInformation.Email
+<br/>
+Name: @Model.AuthenticatedClient.UserInformation.Name
+<br/>
