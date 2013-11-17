@@ -151,7 +151,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MyAuthenticationCallbackProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

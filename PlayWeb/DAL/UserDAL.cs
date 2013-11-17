@@ -29,10 +29,10 @@
 			var db = new StacDataContext();
 			string displayName = "", imageUrl = "";
 			int? id = 0;
-			var result = db.Users_GetFromEmail(email, ref id, ref displayName, ref imageUrl);
+			db.Users_GetFromEmail(email, ref id, ref displayName, ref imageUrl);
 
 			// ReSharper disable once PossibleInvalidOperationException
-			return result == 1 ? CreateUser(new Types.User(0, displayName, imageUrl, email)) : new Types.User((int)id, displayName, imageUrl, email);
+			return id == 0 ? CreateUser(new Types.User(0, displayName, imageUrl, email)) : new Types.User((int)id, displayName, imageUrl, email);
 		}
 
 		/// <summary>

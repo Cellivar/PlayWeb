@@ -1,4 +1,5 @@
-﻿using PlayWeb.Models.Login;
+﻿using PlayWeb.DAL;
+using PlayWeb.Models.Login;
 using SimpleAuthentication.Mvc;
 using System.Web;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace PlayWeb.Controllers
 		{
 
 			// Generate a new user if they haven't logged in before
-
+			UserDAL.GetOrCreateUser(model.AuthenticatedClient.UserInformation.Email);
 
 			return new ViewResult
 			{
