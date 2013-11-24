@@ -54,7 +54,7 @@ namespace PlayWeb.DAL
     #endregion
 		
 		public StacDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["StacConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["StacConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -137,33 +137,6 @@ namespace PlayWeb.DAL
 			{
 				return this.GetTable<Task>();
 			}
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Users_Create")]
-		public int Users_Create([global::System.Data.Linq.Mapping.ParameterAttribute(Name="DisplayName", DbType="NVarChar(150)")] string displayName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(255)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageUrl", DbType="NVarChar(255)")] string imageUrl)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), displayName, email, imageUrl);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Users_GetFromID")]
-		public int Users_GetFromID([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DisplayName", DbType="NVarChar(150)")] ref string displayName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(255)")] ref string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageUrl", DbType="NVarChar(255)")] ref string imageUrl)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, displayName, email, imageUrl);
-			displayName = ((string)(result.GetParameterValue(1)));
-			email = ((string)(result.GetParameterValue(2)));
-			imageUrl = ((string)(result.GetParameterValue(3)));
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Users_GetFromEmail")]
-		public int Users_GetFromEmail([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(255)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] ref System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DisplayName", DbType="NVarChar(150)")] ref string displayName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ImageUrl", DbType="NVarChar(255)")] ref string imageUrl)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), email, userID, displayName, imageUrl);
-			userID = ((System.Nullable<int>)(result.GetParameterValue(1)));
-			displayName = ((string)(result.GetParameterValue(2)));
-			imageUrl = ((string)(result.GetParameterValue(3)));
-			return ((int)(result.ReturnValue));
 		}
 	}
 	

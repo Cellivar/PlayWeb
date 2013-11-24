@@ -23,6 +23,7 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,11 +58,15 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Stored Procedures" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Stored Procedures\Users_Create.sql" />
-    <Build Include="Stored Procedures\Users_GetFromID.sql" />
-    <Build Include="Stored Procedures\Users_GetFromEmail.sql" />
+    <Build Include="Tables\ColorEnum.sql" />
+    <Build Include="Tables\Emails.sql" />
+    <Build Include="Tables\PriorityEnum.sql" />
+    <Build Include="Tables\Reminders.sql" />
+    <Build Include="Tables\ReminderTypeEnum.sql" />
+    <Build Include="Tables\Tasks.sql" />
+    <Build Include="Tables\Users.sql" />
   </ItemGroup>
 </Project>

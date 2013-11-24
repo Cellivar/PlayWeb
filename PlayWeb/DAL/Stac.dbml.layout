@@ -44,42 +44,42 @@
         <elementListCompartment Id="3d3e4230-1689-4098-8f45-60cb176558c0" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.5 : 1.84699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/Email/Email_User" />
       <nodes>
         <classShapeMoniker Id="b83456c9-2f32-41b8-a076-0c842315f4eb" />
         <classShapeMoniker Id="f29e1970-c467-4b0d-83b2-c26a5e10bf07" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.84699625651042); (10 : 4.84699625651042); (10 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.84699625651042); (10 : 4.84699625651042); (10 : 2.77089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/ReminderTypeEnum/ReminderTypeEnum_Reminder" />
       <nodes>
         <classShapeMoniker Id="57f1ea84-7c83-49f6-9d2f-cce159c903db" />
         <classShapeMoniker Id="6a40935f-041b-46b0-9b7d-1c67f9116e1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 1.88544840494792); (9 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 1.88544840494792); (9 : 1.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/Task/Task_Reminder" />
       <nodes>
         <classShapeMoniker Id="1e07ef86-e183-495e-813a-874c8cfbe94c" />
         <classShapeMoniker Id="6a40935f-041b-46b0-9b7d-1c67f9116e1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.75); (5.875 : 5.375); (5.875 : 1.85659912109375); (6.25 : 1.85659912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 5.75); (5.875 : 5.375); (5.875 : 1.85659912109375); (6.25 : 1.85659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/ColorEnum/ColorEnum_Task" />
       <nodes>
         <classShapeMoniker Id="73e837bc-3233-40fd-84e1-433ea4602476" />
         <classShapeMoniker Id="1e07ef86-e183-495e-813a-874c8cfbe94c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.90622649649439); (5.81607443490112 : 3.59015206159327 : JumpStart); (5.93392556509888 : 3.47230093139551 : JumpEnd); (6.03125 : 3.37497649649439); (6.03125 : 2.37865068164062); (6.25 : 2.37865068164062)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.90622649649439); (5.81607443490112 : 3.59015206159327 : JumpStart); (5.93392556509888 : 3.47230093139551 : JumpEnd); (6.03125 : 3.37497649649439); (6.03125 : 2.37865068164062); (6.25 : 2.37865068164062)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/PriorityEnum/PriorityEnum_Task" />
       <nodes>
         <classShapeMoniker Id="27f90205-e78a-40d5-9d60-d88f6a81a6a8" />
         <classShapeMoniker Id="1e07ef86-e183-495e-813a-874c8cfbe94c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 1.42829956054687); (6.25 : 1.42829956054687)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 1.42829956054687); (6.25 : 1.42829956054687)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/StacDataContext/User/User_Task" />
       <nodes>
         <classShapeMoniker Id="f29e1970-c467-4b0d-83b2-c26a5e10bf07" />

@@ -13,7 +13,13 @@ namespace PlayWeb.Controllers
 		{
 
 			// Generate a new user if they haven't logged in before
-			UserDAL.GetOrCreateUser(model.AuthenticatedClient.UserInformation.Email);
+			var user = new User
+			{
+				DisplayName = model.AuthenticatedClient.UserInformation.Name,
+				ImageUrl = model.AuthenticatedClient.UserInformation.Picture,
+				Email = new Email { Email1 = model.AuthenticatedClient.UserInformation.Email }
+			};
+			UserDAL.GetOrCreateUser(user);
 
 			return new ViewResult
 			{

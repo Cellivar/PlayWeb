@@ -106,9 +106,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlayWeb\PlayWeb.csproj">
+    <ProjectReference Include="..\PlayWeb\Stac.csproj">
       <Project>{D1AC8A98-5963-4F5C-8E5E-A0FBC26C8B17}</Project>
-      <Name>PlayWeb</Name>
+      <Name>Stac</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

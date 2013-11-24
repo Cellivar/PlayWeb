@@ -151,6 +151,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MyAuthenticationCallbackProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\ColorEnumDAL.cs" />
+    <Compile Include="DAL\EmailDAL.cs" />
+    <Compile Include="DAL\DALExtensionMethods.cs" />
+    <Compile Include="DAL\PriorityEnumDAL.cs" />
+    <Compile Include="DAL\ReminderDAL.cs" />
+    <Compile Include="DAL\ReminderTypeEnumDAL.cs" />
+    <Compile Include="DAL\TaskDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -171,7 +178,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stac.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Types\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap-theme.css" />

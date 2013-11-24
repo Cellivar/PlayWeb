@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Stac" Class="StacDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=CLIFFDESKTOP\PLAYDB;Initial Catalog=Stac;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StacConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=doomserv;Initial Catalog=Stac;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="StacConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ColorEnum" Member="ColorEnums">
     <Type Name="ColorEnum">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -64,24 +64,4 @@
       <Association Name="User_Task" Member="User" ThisKey="UserID" OtherKey="ID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.Users_Create" Method="Users_Create">
-    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Users_GetFromID" Method="Users_GetFromID">
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" Direction="InOut" />
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
-    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.Users_GetFromEmail" Method="Users_GetFromEmail">
-    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
-    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="DisplayName" Parameter="displayName" Type="System.String" DbType="NVarChar(150)" Direction="InOut" />
-    <Parameter Name="ImageUrl" Parameter="imageUrl" Type="System.String" DbType="NVarChar(255)" Direction="InOut" />
-    <Return Type="System.Int32" />
-  </Function>
 </Database>

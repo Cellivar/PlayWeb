@@ -5,3 +5,8 @@ Web.Debug.config
 Web.Release.config
 *.pubxml*
 *.suo
+DBDeploy/DBDeploy.dbmdl
+DBDeploy/DBDeploy.sqlproj
+DBDeploy/DBDeploy.sqlproj.user
+PlayWeb.v11.suo
+DBDeploy/DBDeploy.dbmdl
