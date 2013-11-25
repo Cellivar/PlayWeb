@@ -21,15 +21,17 @@ namespace PlayWeb.Controllers
 			};
 			UserDAL.GetOrCreateUser(user);
 
+			if (context.Session != null) context.Session["User"] = user;
+
 			return new ViewResult
 			{
 				ViewName = "LoggedIn",
 				ViewData = new ViewDataDictionary(new AuthenticateCallbackViewModel
-				{
-					AuthenticatedClient = model.AuthenticatedClient,
-					Exception = model.Exception,
-					ReturnUrl = model.ReturnUrl
-				})
+					{
+						Exception = model.Exception,
+						ReturnUrl = model.ReturnUrl,
+						User = user
+					})
 			};
 		}
 

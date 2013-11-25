@@ -1,12 +1,12 @@
-﻿using SimpleAuthentication.Core;
+﻿using PlayWeb.DAL;
 using System;
 
 namespace PlayWeb.Models.Login
 {
 	public class AuthenticateCallbackViewModel
 	{
-		public IAuthenticatedClient AuthenticatedClient { get; set; }
 		public Exception Exception { get; set; }
 		public string ReturnUrl { get; set; }
+		public User User { get; set; }
 	}
 }

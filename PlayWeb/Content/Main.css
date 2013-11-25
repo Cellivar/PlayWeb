@@ -53,6 +53,13 @@ body:before {
 
 /* --------------- End Sticky Footer code --------------- */
 
+#container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	height: 400px;
+}
+
 .diagonal_lines_pattern {
 	background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, #ccc), color-stop(0.25, #ccc), color-stop(0.25, #bbb), color-stop(0.5, #bbb), color-stop(0.5, #ccc), color-stop(0.75, #ccc), color-stop(0.75, #bbb));
 	background-image: -webkit-linear-gradient(left bottom, #ccc 0, #ccc 25%, #bbb 25%, #bbb 50%, #ccc 50%, #ccc 75%, #bbb 75%);
@@ -82,4 +89,27 @@ body:before {
 	color: black;
 	text-align: center;
 	padding-top: 40px;
+}
+
+/* --------------- Generic Buttons --------------- */
+
+.Button {
+	padding: 5px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #bbbbbb;
+	color: black;
+}
+
+.GoogleLogin {
+	background-image: url('img/login/Google/Red-signin-Medium-base-32dp.png');
+	width: 242px;
+	height: 84px;
+}
+
+.GoogleLogin:hover {
+	background-image: url('img/login/Google/Red-signin-Medium-hover-32dp.png');
+}
+.GoogleLogin:active {
+	background-image: url('img/login/Google/Red-signin-Medium-press-32dp.png');
 }

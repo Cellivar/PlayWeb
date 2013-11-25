@@ -23,7 +23,9 @@
 	<div id="css_footer_wrap">
 		<div id="css_footer_body">
 			@HeaderContent()
-			@RenderBody()
+			<div id="container">
+				@RenderBody()
+			</div>
 		</div>
 	</div>
 	@FooterContent()
