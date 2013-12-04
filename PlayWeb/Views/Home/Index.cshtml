@@ -1,7 +1,29 @@
-﻿@using SimpleAuthentication.Mvc
+﻿@using PlayWeb.DAL
+@using SimpleAuthentication.Mvc
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Helpers.GoogleLoginButtonLarge(Url.RedirectToProvider("google"))
+@section scripts{
+	<script src="@Url.Content("~/Scripts/Views/Home/Home.js")"></script>
+}
+
+@if (Session["User"] != null)
+{
+	var user = (User) Session["User"];
+
+	@user.DisplayName
+	<br/>
+	@user.Email.Email1
+	<br/>
+	@user.ID
+	<br/>
+	@user.ImageUrl
+	<br/>
+	@Helpers.LogOutButton()
+}
+else
+{
+	@Helpers.GoogleLoginButtonLarge(Url.RedirectToProvider("google"))
+}

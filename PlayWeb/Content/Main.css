@@ -36,19 +36,24 @@ body:before {
 #header {
 	margin-left: auto;
 	margin-right: auto;
-	height: 30px;
+	height: 50px;
 	width: 80%;
 	-ms-border-radius: 0 0 10px 10px;
 	border-radius: 0 0 10px 10px;
 	margin-bottom: 20px;
-
-	color: #8AEB7A;
+	
 	padding: 0 15px;
-	font-family: "Arial", "Helvetica", sans-serif;
-	font-weight: bold;
-	font-size: 20px;
 
 	background-color: #ff9f57;
+}
+
+#site_title a {
+	float: left;
+
+	color: #8AEB7A;
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-weight: bold;
+	font-size: 36px;
 }
 
 /* --------------- End Sticky Footer code --------------- */
@@ -91,6 +96,25 @@ body:before {
 	padding-top: 40px;
 }
 
+.userbox {
+	float: right;
+	margin-top: 3px;
+	border-radius: 10px;
+	padding: 2px;
+
+	background-color: #FFB985;
+}
+
+.user-name {
+	margin: 10px;
+	float: right;
+}
+
+.mini-profile {
+	border-radius: 10px;
+	float: right;
+}
+
 /* --------------- Generic Buttons --------------- */
 
 .Button {
@@ -98,8 +122,10 @@ body:before {
 	-ms-border-radius: 10px;
 	border-radius: 10px;
 	border: 1px solid #bbbbbb;
-	color: black;
+	color: #F91E2E;
 }
+
+/* --------------- Google Login Buttons --------------- */
 
 .GoogleLogin {
 	background-image: url('img/login/Google/Red-signin-Medium-base-32dp.png');
@@ -112,4 +138,18 @@ body:before {
 }
 .GoogleLogin:active {
 	background-image: url('img/login/Google/Red-signin-Medium-press-32dp.png');
+}
+
+.GoogleLoginTiny {
+	background-image: url('img/login/Google/Red-signin_Short_base_32dp.png');
+	width: 37px;
+	height: 37px;
+}
+
+.GoogleLoginTiny:hover {
+	background-image: url('img/login/Google/Red-signin_Short_hover_32dp.png');
+}
+
+.GoogleLoginTiny:active {
+	background-image: url('img/login/Google/Red-signin_Short_press_32dp.png');
 }

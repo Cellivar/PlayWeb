@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using PlayWeb.DAL
+@using SimpleAuthentication.Mvc
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>@ViewBag.Title</title>
 	@Styles.Render("~/Content/css")
-	@Styles.Render("~/Content/bootstrap/base")
 	@Styles.Render("~/Content/default")
 
-	@Scripts.Render("~/bundles/bootstrap")
 	@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -34,9 +34,19 @@
 
 @helper HeaderContent()
 {
-<div id="header" class="diagonal_bar_pattern">
-	StaC
-</div>
+	<div id="header" class="diagonal_bar_pattern">
+		<div id="site_title">
+			<a href="~/">StaC</a>
+		</div>
+		@if (Session["User"] != null)
+		{
+			@Helpers.UserBar((User) Session["User"])
+		}
+		else
+		{
+			@Helpers.UserBarSignIn(Url.RedirectToProvider("google"))
+		}
+	</div>
 }
 
 @helper FooterContent()

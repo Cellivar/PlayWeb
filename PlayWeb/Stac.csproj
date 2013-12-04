@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\MyAuthenticationCallbackProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\ColorEnumDAL.cs" />
@@ -188,6 +189,9 @@
     <Content Include="Content\img\login\Google\Red-signin-Medium-base-32dp.png" />
     <Content Include="Content\img\login\Google\Red-signin-Medium-hover-32dp.png" />
     <Content Include="Content\img\login\Google\Red-signin-Medium-press-32dp.png" />
+    <Content Include="Content\img\login\Google\Red-signin_Short_base_32dp.png" />
+    <Content Include="Content\img\login\Google\Red-signin_Short_hover_32dp.png" />
+    <Content Include="Content\img\login\Google\Red-signin_Short_press_32dp.png" />
     <Content Include="Content\Main.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -214,6 +218,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Views\Home\Home.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

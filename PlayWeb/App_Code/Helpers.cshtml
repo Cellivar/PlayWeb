@@ -1,6 +1,44 @@
-﻿@helper GoogleLoginButtonLarge(string redirectDestination)
+﻿@using PlayWeb.DAL
+
+@helper GoogleLoginButtonLarge(string redirectDestination)
 {
 	<a href="@redirectDestination">
 		<div class="GoogleLogin"></div>
 	</a>
+}
+
+@helper GoogleLoginButtonTiny(string redirectDestination)
+{
+	<a href="@redirectDestination">
+		<div class="GoogleLoginTiny"></div>
+	</a>
+}
+
+@helper UserBar(User user)
+{
+	<div class="userbox">
+		<div class="mini-profile">
+			<img class="mini-profile" width="40" height="40" alt="User Icon" src="@user.ImageUrl"/>
+		</div>
+		<div class="user-name">
+			<span>@user.DisplayName</span>
+		</div>
+	</div>
+}
+
+@helper UserBarSignIn(string redirectDestination)
+{
+	<div class="userbox">
+		<div class="user-name">
+			<span>Sign In</span>
+		</div>
+		<div class="mini-profile">
+			@GoogleLoginButtonTiny(redirectDestination)
+		</div>
+	</div>
+}
+
+@helper LogOutButton()
+{
+	<input type="button" class="Button logout-button" value="Log Out"/>
 }
