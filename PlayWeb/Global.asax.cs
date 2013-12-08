@@ -5,7 +5,6 @@ using SimpleAuthentication.Core;
 using SimpleAuthentication.Mvc;
 using SimpleAuthentication.Mvc.Caching;
 using System;
-using System.Security.Policy;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -25,6 +24,7 @@ namespace PlayWeb
 
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			FilterConfig.RegisterHttpFilters(GlobalConfiguration.Configuration.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
@@ -43,7 +43,7 @@ namespace PlayWeb
 		/// <summary>
 		/// The event occurs just after Initialization of Session, and before Page_Init event
 		/// </summary>
-		protected void Application_PreREquestHandlerExecute(Object sender, EventArgs e)
+		protected void Application_PreRequestHandlerExecute(Object sender, EventArgs e)
 		{
 			// here it checks if session is reuired, as
 			// .aspx requires session, and session should be available there

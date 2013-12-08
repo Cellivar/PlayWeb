@@ -10,6 +10,7 @@
 	@Styles.Render("~/Content/default")
 
 	@Scripts.Render("~/bundles/modernizr")
+	@AjaxFilterSetup()
 </head>
 <body>
 	@Scripts.Render("~/bundles/jquery")
@@ -19,7 +20,7 @@
 			//setTimeout(function () {
 			//        location.reload();
 			//}, 2000);
-	</script>
+		</script>
 	<div id="css_footer_wrap">
 		<div id="css_footer_body">
 			@HeaderContent()
@@ -57,4 +58,25 @@
 		<div>Something break? <a href="mailto:chapman.cliff@gmail.com">Email Webmaster</a></div>
 	</div>
 </div>
+}
+
+@helper AjaxFilterSetup()
+{
+	<script>
+		$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+			jqXHR.setRequestHeader('RequestVerificationToken', '@TokenHeaderValue()');
+		});
+	</script>
+}
+
+@functions
+{
+
+	public string TokenHeaderValue()
+	{
+		string cookieToken, formToken;
+		AntiForgery.GetTokens(null, out cookieToken, out formToken);
+		return cookieToken + ":" + formToken;
+	}
+
 }

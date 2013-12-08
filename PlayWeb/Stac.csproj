@@ -144,6 +144,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiAuthorizeAttribute.cs" />
     <Compile Include="App_Start\BootstrapBundleConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\MyAuthenticationCallbackProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="DAL\ColorEnumDAL.cs" />
     <Compile Include="DAL\EmailDAL.cs" />
     <Compile Include="DAL\DALExtensionMethods.cs" />
@@ -163,7 +165,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Login\AuthenticateCallbackViewModel.cs" />
     <Compile Include="Models\Login\AuthenticationProviderError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -179,6 +180,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stac.dbml</DependentUpon>
     </Compile>
+    <Compile Include="ValidateHeaderAntiForgeryTokenAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
@@ -218,7 +220,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\Views\Home\Home.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -240,7 +241,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Login\" />
+    <Folder Include="Scripts\Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
