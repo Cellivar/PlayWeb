@@ -233,7 +233,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\SimpleAuthentication\LoginError.cshtml" />
-    <Content Include="Views\SimpleAuthentication\LoggedIn.cshtml" />
     <Content Include="DAL\Stac.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Stac.designer.cs</LastGenOutput>

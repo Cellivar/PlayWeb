@@ -10,3 +10,4 @@ DBDeploy/DBDeploy.sqlproj
 DBDeploy/DBDeploy.sqlproj.user
 PlayWeb.v11.suo
 DBDeploy/DBDeploy.dbmdl
+*.user
