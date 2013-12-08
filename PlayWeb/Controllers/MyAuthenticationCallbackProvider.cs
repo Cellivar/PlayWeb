@@ -19,21 +19,12 @@ namespace PlayWeb.Controllers
 				ImageUrl = model.AuthenticatedClient.UserInformation.Picture,
 				Email = new Email { Email1 = model.AuthenticatedClient.UserInformation.Email }
 			};
-			UserDAL.GetOrCreateUser(user);
+			user = UserDAL.GetOrCreateUser(user);
 
+			// And dump it into the context so we know who we're talking about.
 			if (context.Session != null) context.Session["User"] = user;
 
-			return new ViewResult
-			{
-				ViewName = "LoggedIn",
-				ViewData = new ViewDataDictionary(new AuthenticateCallbackViewModel
-					{
-						Exception = model.Exception,
-						ReturnUrl = model.ReturnUrl,
-						User = user,
-						Context = context
-					})
-			};
+			return new RedirectResult("~/");
 		}
 
 		public ActionResult OnRedirectToAuthenticationProviderError(HttpContextBase context, string errorMessage)

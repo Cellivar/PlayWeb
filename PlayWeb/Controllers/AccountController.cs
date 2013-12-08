@@ -1,19 +1,11 @@
-﻿using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace PlayWeb.Controllers
 {
 	public class AccountController : ApiController
 	{
-		/// <summary>
-		/// Log the current user out by abandoning their session.
-		/// </summary>
-		public void Get(string id)
+		public void Get()
 		{
-			if (id == "logout")
-			{
-				HttpContext.Current.Session.Abandon();
-			}
 		}
 
 		//// GET api/account
