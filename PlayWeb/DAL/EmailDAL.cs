@@ -32,15 +32,7 @@ namespace PlayWeb.DAL
 		/// <returns></returns>
 		public static Email CreateEmail(string email)
 		{
-			var db = new StacDataContext();
-
 			var newEmail = new Email { Email1 = email };
-
-			db.Emails.InsertOnSubmit(newEmail);
-			db.SubmitChanges();
-
-			// Email will have it's ID field populated automagically
-			// Did I mention I love Linq?
 			return newEmail;
 		}
 		/// <summary>
